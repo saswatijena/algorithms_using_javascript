@@ -1,7 +1,2 @@
-(function () {
-    let x = "testing";
-    for (let y = 0; y < 3; y++) {
-        console.log(x);
-        console.log(y);
-    }
-})();
+let binarySearch = require('./Arrays/binarySearch.js');
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 6));
