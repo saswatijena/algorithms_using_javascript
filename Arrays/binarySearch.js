@@ -1,16 +1,18 @@
 let binarySearch = function (sortedArray, num) {
-    const mid_index = Math.floor(sortedArray.length / 2);
-    if (sortedArray.length === 1 && sortedArray[mid_index] !== num) {
-        return -1;
+    let low = 0;
+    let high = sortedArray.length-1;
+    while (low <= high) {
+        let mid_index = low + Math.floor((high - low) / 2);
+        //console.log(`low: ${low} high: ${high} mid_index: ${mid_index}`);
+        if (num === sortedArray[mid_index]) {
+            return mid_index;
+        } else if (num > sortedArray[mid_index]) {
+            low = mid_index + 1;
+        } else if (num < sortedArray[mid_index]) {
+            high = mid_index - 1;
+        }
     }
-
-    if (sortedArray[mid_index] === num) {
-        return mid_index;
-    } else if (num > sortedArray[mid_index]) {
-        binarySearch(sortedArray.slice(mid_index + 1), num);
-    } else if (num < sortedArray[mid_index]) {
-        binarySearch(sortedArray.slice(0, mid_index), num);
-    }
+    return -1;
 }
 
 module.exports = binarySearch;
