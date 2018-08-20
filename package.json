@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/saswatijena/algorithms_using_javascript/issues"
   },
-  "homepage": "https://github.com/saswatijena/algorithms_using_javascript#readme"
+  "homepage": "https://github.com/saswatijena/algorithms_using_javascript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
 }
