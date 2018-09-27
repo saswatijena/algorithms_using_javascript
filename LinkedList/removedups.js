@@ -22,7 +22,19 @@ function removeDupsByHash(list) {
     }
 }
 function removeDupsInline(list) {
+    let current_node = list.head;
 
+    while (current_node) {       
+        let runner_node = current_node;
+        while (runner_node.next) {
+            if (runner_node.next.value === current_node.value) {
+                runner_node.next = runner_node.next.next;
+            } else {
+                runner_node = runner_node.next;
+            }
+        }
+        current_node = current_node.next;
+    }
 }
 function removeDups() {
     let l1 = new LinkedList();
