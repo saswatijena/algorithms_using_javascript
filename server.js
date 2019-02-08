@@ -4,5 +4,8 @@
 // let kthfromlast = require('./LinkedList/kthfromlast');
 // kthfromlast(5);
 
-let sumoflists = require('./LinkedList/sumoflists');
-sumoflists();
+// let sumoflists = require('./LinkedList/sumoflists');
+// sumoflists();
+
+let isPallindrome = require('./LinkedList/isPallindrome');
+isPallindrome();
