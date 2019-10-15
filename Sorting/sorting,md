@@ -1,0 +1,16 @@
+Sorting is a very common task 
+Each algorithm has its own pros and cons
+
+Bubble Sorting
+Compare each number to its next and swap so that the highest number bubbles up to the end of the array
+Big o : npow2
+
+
+Selection Sorting
+Select the minimum and move it to the begining
+Better than bubble sort cause swaping only happens once
+
+Insertion Sorting 
+Loops through the array and inserts the element being evaluated at the correct place in the already evaluated portion of the array
+
+ 
