@@ -35,12 +35,10 @@ const MergeSort = (arr) => {
 
     // Split array till single element array
     let mid = Math.floor(arr.length / 2);
-    let arr1 = MergeSort(arr.slice(0, mid));
-    let arr2 = MergeSort(arr.slice(mid, arr.length));
+    let left = MergeSort(arr.slice(0, mid));
+    let right = MergeSort(arr.slice(mid, arr.length));
     // Merge two sorted arrays 
-    return MergeSortedArrays(arr1, arr2);
-
-    return [];
+    return MergeSortedArrays(left, right);
 }
 
 module.exports = { MergeSort, MergeSortedArrays };
