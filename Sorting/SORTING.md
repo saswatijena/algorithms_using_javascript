@@ -30,4 +30,5 @@ Better than bubble sort cause swaping only happens once
     
     Log n is for splitting the array and n comparisions while merging
 + If is already sorted or any sort of pervious data manuplations doesnot matter cause eventually this splits the array no matter what the orientation of the array is.
- 
+
+
