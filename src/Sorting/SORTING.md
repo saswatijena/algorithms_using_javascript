@@ -34,6 +34,11 @@ Better than bubble sort cause swaping only happens once
 ### Quick Sort
 + On the same lines of merge sort, we split the array till we get arrays of length 0 or 1.
 + Randomly pick a **pivot** and then arrange all the items that are less than the pivot to the left side and all the items that are larger than the pivot to the right side. That way the pivot item is in the correct place if the array was to be sorted. 
++ Best case is n log n which is similar to merge sort
 + **Big O : n^2**
 
+
 ### Radix Sort
++ All the above are comparision sort. This one is a special sorting algorithm that doesnot use comparision
++ This uses the concept of grouping based on the position of the digit in a number
++ Number of iterations will depend on number of digits in the highest number

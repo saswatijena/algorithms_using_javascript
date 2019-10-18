@@ -4,11 +4,11 @@ const QuickSort = (arr, start = 0, end = arr ? arr.length : 0) => {
     if (end - start <= 1) return arr;
     // Find a pivot point usually the first point
     if (arr) {
-        let pivot = arr[start]; // 4
-        let swapIndex = start;  // 0
+        let pivot = arr[start];
+        let swapIndex = start;
 
-        for (let i = start + 1; i < end; i++) { // 1
-            if (arr[i] < pivot) { // 0
+        for (let i = start + 1; i < end; i++) {
+            if (arr[i] < pivot) {
                 swapIndex++;
                 if (i !== swapIndex) {
                     let temp = arr[swapIndex];
