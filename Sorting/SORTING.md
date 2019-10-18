@@ -6,19 +6,19 @@ Each algorithm has its own pros and cons
 
 ### Bubble Sorting
 + Compare each number to its next and swap so that the highest number bubbles up to the end of the array
-+ **Big O : n pow 2**
++ **Big O : n^2**
 + Works really well in case of nearly sorted data 
 
 ### Selection Sorting
 + Select the minimum and move it to the begining
 Better than bubble sort cause swaping only happens once
-+ **Big O : n pow 2**
++ **Big O : n^2**
 + Does not perform well in nearly sorted data 
 
 
 ### Insertion Sorting    
 + Loops through the array and inserts the element  being evaluated at the correct place in the already evaluated portion of the array
-+ **Big O : n pow 2**
++ **Big O : n^2**
 + Works really well in case of nearly sorted data 
 + Works well in case of streaming data 
 + The above sorting algorithms don't scale very well. They work well with small data but not for huge amount of data
@@ -33,4 +33,5 @@ Better than bubble sort cause swaping only happens once
 
 ### Quick Sort
 + On the same lines of merge sort, we split the array till we get arrays of length 0 or 1.
-+ Randomly pick a pivot and then arrange all the items that are less than the pivot to the left side and all the items that are larger than the pivot to the right side. That way the pivot item is in the correct place if the array was to be sorted. 
++ Randomly pick a **pivot** and then arrange all the items that are less than the pivot to the left side and all the items that are larger than the pivot to the right side. That way the pivot item is in the correct place if the array was to be sorted. 
++ **Big O : n^2**
