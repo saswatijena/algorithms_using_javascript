@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const InsertionSort = require('./InsertionSorting')
 
-describe('Bubble sorting should sort array', () => {
+describe('Insertion sorting should sort array', () => {
     it('should sort array', () => {
         let arr = [4, 3, 1, 7, 3, 1];
         let sortedArray = InsertionSort(arr);
