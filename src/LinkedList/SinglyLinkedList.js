@@ -30,7 +30,7 @@ class SinglyLinkedList {
     }
     /** Removes node at the end of the list */
     pop() {
-        if (!this.head) return this;
+        if (!this.head) return undefined;
         let current = this.head;
         let tempTail = this.head;
         while (current.next) {
@@ -44,6 +44,34 @@ class SinglyLinkedList {
             this.head = null;
             this.tail = null;
         }
+        return current;
+    }
+    /** Removes node from the head */
+    shift() {
+        if (!this.head) return undefined;
+        let current = this.head;
+        if (current.next) {
+            this.head = current.next;
+        } else {
+            this.head = null;
+            this.tail = null
+        }
+        this.length--;
+
+        return current;
+    }
+    /** Adds node to the head */
+    unshift(value) {
+        let newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
     }
 
 }
