@@ -45,4 +45,7 @@ class SinglyLinkedList {
             this.tail = null;
         }
     }
+
 }
+
+module.exports = SinglyLinkedList;
