@@ -42,3 +42,4 @@ Better than bubble sort cause swaping only happens once
 + All the above are comparision sort. This one is a special sorting algorithm that doesnot use comparision
 + This uses the concept of grouping based on the position of the digit in a number
 + Number of iterations will depend on number of digits in the highest number
++ **Big O : nk** where k is the digits in the highest number
