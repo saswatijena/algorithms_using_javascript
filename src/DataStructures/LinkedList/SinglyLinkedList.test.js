@@ -264,3 +264,59 @@ describe("Remove", () => {
     expect(list.length).to.equal(0);
   });
 });
+describe("Reverse", () => {
+  it("should reverse a list with single node", () => {
+    let list = new List();
+    list.push(10);
+
+    let reversedList = list.reverse();
+    expect(reversedList.head.value).to.equal(10);
+    expect(reversedList.tail.value).to.equal(10);
+    expect(reversedList.length).to.equal(1);
+  });
+  it("should reverse a list with two nodes", () => {
+    let list = new List();
+    list.push(10);
+    list.push(20);
+
+    let reversedList = list.reverse();
+    expect(reversedList.head.value).to.equal(20);
+    expect(reversedList.tail.value).to.equal(10);
+    expect(reversedList.length).to.equal(2);
+  });
+  it("should reverse a list with three node", () => {
+    let list = new List();
+    list.push(10);
+    list.push(20);
+    list.push(30);
+    let reversedList = list.reverse();
+    expect(reversedList.head.value).to.equal(30);
+    expect(reversedList.tail.value).to.equal(10);
+    expect(reversedList.length).to.equal(3);
+  });
+  it("should reverse a list with more than three nodes", () => {
+    let list = new List();
+    list.push(10);
+    list.push(20);
+    list.push(30);
+    list.push(40);
+    list.push(50);
+    list.push(60);
+
+    let reversedList = list.reverse();
+    expect(reversedList.head.value).to.equal(60);
+    expect(reversedList.tail.value).to.equal(10);
+    expect(reversedList.length).to.equal(6);
+
+    let nextNode = reversedList.head.next;
+    expect(nextNode.value).to.equal(50);
+    nextNode = nextNode.next;
+    expect(nextNode.value).to.equal(40);
+    nextNode = nextNode.next;
+    expect(nextNode.value).to.equal(30);
+    nextNode = nextNode.next;
+    expect(nextNode.value).to.equal(20);
+    nextNode = nextNode.next;
+    expect(nextNode.value).to.equal(10);
+  });
+});

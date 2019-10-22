@@ -145,6 +145,25 @@ class SinglyLinkedList {
       return removedNode;
     }
   }
+  /** Reverses the list in-place */
+  reverse() {
+    let previous = null;
+    let node = this.head;
+    let next;
+    for (let counter = 0; counter < this.length; counter++) {
+      next = node ? node.next : null;
+      node.next = previous;
+      previous = node;
+      node = next;
+    }
+
+    // swap the head and the tail
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+
+    return this;
+  }
 }
 
 module.exports = SinglyLinkedList;
