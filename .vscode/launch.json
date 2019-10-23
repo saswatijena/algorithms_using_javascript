@@ -13,7 +13,7 @@
                 "--timeout",
                 "999999",
                 "--colors",
-                "${workspaceFolder}/src/**/*.test.js"
+                "${workspaceFolder}\\src\\**\\*.test.js"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"

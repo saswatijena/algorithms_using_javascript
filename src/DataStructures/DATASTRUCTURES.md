@@ -14,3 +14,8 @@ Data structures are collections of values and relationships among them or action
   - Access : **O(n)**
 
 - Excels at insertion and deletion in comparision to array.
+
+### Doubly Linked List 
+- Contains head, tail and length property 
+- Consists of nodes, where each node has a value and points to next as well as previous node. 
+- takes up more memory is one of the drawbacks which is almost always a tradeoff :) 
