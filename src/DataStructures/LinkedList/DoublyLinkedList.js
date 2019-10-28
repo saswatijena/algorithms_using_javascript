@@ -26,6 +26,18 @@ class DoublyLinkedList {
 
         return this;
     }
+    /** Pops node from the end of the list */
+    pop() {
+        if (this.length === 0) return undefined;
+
+        if (this.length === 1) {
+            this.head = null;
+        }
+        let poppedNode = this.tail;
+        this.tail = this.tail.previous;
+        this.length--;
+        return poppedNode;
+    }
 }
 
 module.exports = DoublyLinkedList;
