@@ -30,13 +30,46 @@ class DoublyLinkedList {
     pop() {
         if (this.length === 0) return undefined;
 
+        let poppedNode = this.tail;
         if (this.length === 1) {
             this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = this.tail.previous;
+            this.tail.next = null;
+            poppedNode.previous = null;
         }
-        let poppedNode = this.tail;
-        this.tail = this.tail.previous;
         this.length--;
         return poppedNode;
+    }
+    /** Removes node from the start of the list */
+    shift() {
+        if (this.length === 0) return undefined;
+        let shifteNode = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = shifteNode.next;
+            this.head.previous = null;
+            shifteNode.next = null;
+        }
+        this.length--;
+        return shifteNode;
+    }
+    /** Adds node to the begining of the list */
+    unshift(value) {
+        let newNode = new Node(value);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head.previous = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
     }
 }
 
