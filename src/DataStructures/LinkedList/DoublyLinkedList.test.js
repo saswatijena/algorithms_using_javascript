@@ -228,4 +228,54 @@ describe('Doubly Linked List', () => {
             expect(list.length).to.equal(5);
         });
     });
+    describe('Get', () => {
+        it('should throw error if index is less than 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            expect(() => list.get(-1)).to.throw('index is out of bound');
+        });
+        it('should throw error if index is greater than or equal to length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            expect(() => list.get(3)).to.throw('index is out of bound');
+            expect(() => list.get(4)).to.throw('index is out of bound');
+        });
+        it('should get the first item if index is 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let firstNode = list.get(0);
+            expect(firstNode.value).to.equal(10);
+        });
+        it('should get the last item if index is 1 less than the length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let firstNode = list.get(2);
+            expect(firstNode.value).to.equal(30);
+        });
+        it('should get value at the specified index', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+            list.push(40);
+            list.push(50);
+            list.push(60);
+            list.push(70);
+
+            let firstNode = list.get(4);
+            expect(firstNode.value).to.equal(50);
+        })
+    })
 });

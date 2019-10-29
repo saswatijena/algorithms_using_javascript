@@ -71,6 +71,37 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    /** Gets node based on the passed in index */
+    get(index) {
+        if (index < 0 || index > this.length - 1) throw new Error('index is out of bound');
+
+        let mid = Math.floor(this.length / 2);
+        let foundNode;
+        if (index <= mid) {
+            // loop from the start to mid 
+            let counter = 0;
+            foundNode = this.head;
+            while (counter !== index) {
+                foundNode = foundNode.next;
+                counter++;
+            }
+        } else {
+            // loop from the end to mid
+            let counter = this.length - 1;
+            foundNode = this.tail;
+            while (counter !== index) {
+                foundNode = foundNode.previous;
+                counter--;
+            }
+        }
+        return foundNode;
+    }
+    /** Sets value of node based on the passed in index */
+    set(index, value) {
+        if (index === this.length) this.push(value);
+        let node = this.get(index);
+        node.value = value;
+    }
 }
 
 module.exports = DoublyLinkedList;
