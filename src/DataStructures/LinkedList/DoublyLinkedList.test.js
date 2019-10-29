@@ -277,5 +277,50 @@ describe('Doubly Linked List', () => {
             let firstNode = list.get(4);
             expect(firstNode.value).to.equal(50);
         })
+    });
+    describe('Set', () => {
+        it('should set when there are no nodes in the list', () => {
+            let list = new DoublyLinkedList();
+            list.set(0, 10);
+
+            expect(list.get(0).value).to.equal(10);
+        });
+        it('should set the last item when there are multiple nodes in the list', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.set(3, 40);
+            expect(list.get(3).value).to.equal(40);
+        });
+        it('should set when there are multiple nodes in the list', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.set(1, 40);
+            const node = list.get(1);
+            expect(node.value).to.equal(40);
+            expect(node.next.value).to.equal(30);
+            expect(node.previous.value).to.equal(10);
+        });
+        it('should throw error if the index is less than 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            expect(() => list.set(-1, 40)).to.throw('index is out of bound')
+        });
+        it('should throw error if index is greater than the length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            expect(() => list.set(4, 40)).to.throw('index is out of bound')
+        })
     })
 });
