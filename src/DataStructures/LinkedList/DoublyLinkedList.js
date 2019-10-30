@@ -128,7 +128,21 @@ class DoublyLinkedList {
     }
     /** Removes node from the passed in index */
     remove(index) {
+        if (index < 0 || index >= this.length) throw new Error('index is out of bound');
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
 
+        let currentNode = this.get(index);
+        let previousNode = currentNode.previous;
+        let nextNode = currentNode.next;
+
+        currentNode.next = null;
+        currentNode.previous = null;
+        previousNode.next = nextNode;
+        nextNode.previous = previousNode;
+
+        this.length--;
+        return currentNode;
     }
 }
 

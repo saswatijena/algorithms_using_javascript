@@ -386,5 +386,110 @@ describe('Doubly Linked List', () => {
 
             expect(list.length).to.equal(4);
         });
+        it('should throw error when index is less than 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+
+            expect(() => list.insert(-1, 40)).to.throw('index is out of bound');
+        });
+        it('should throw error when index is greater than the length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+
+            expect(() => list.insert(3, 40)).to.throw('index is out of bound');
+        });
+    });
+    describe('Remove', () => {
+        it('should remove at the begining if the index is 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(0);
+
+            expect(list.head.value).to.equal(20);
+            expect(list.tail.value).to.equal(30);
+            expect(removedNode.value).to.equal(10);
+            expect(removedNode.next).to.be.null;
+            expect(removedNode.previous).to.be.null;
+
+        });
+        it('should decrement length when index is 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(0);
+
+            expect(list.length).to.equal(2);
+        });
+        it('should insert at the end if the index is equal to length -1 ', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(2);
+
+            expect(list.head.value).to.equal(10);
+            expect(list.tail.value).to.equal(20);
+            expect(removedNode.value).to.equal(30);
+            expect(removedNode.next).to.be.null;
+            expect(removedNode.previous).to.be.null;
+        });
+        it('should decrement length when the index is equal to length -1 ', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(2);
+
+            expect(list.length).to.equal(2);
+        });
+        it('should remove when the index if anywhere in between 0 and length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(1);
+
+            expect(list.head.value).to.equal(10);
+            expect(list.tail.value).to.equal(30);
+            expect(list.head.next.value).to.equal(30);
+            expect(list.tail.previous.value).to.equal(10);
+            expect(removedNode.value).to.equal(20);
+            expect(removedNode.next).to.be.null;
+            expect(removedNode.previous).to.be.null;
+        });
+        it('should decrement length when the index is anywhere between 0 and length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            let removedNode = list.remove(1);
+
+            expect(list.length).to.equal(2);
+        });
+        it('should throw error when index is less than 0', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+
+            expect(() => list.remove(-1)).to.throw('index is out of bound');
+        });
+        it('should throw error when index is greater or equal to the length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+
+            expect(() => list.remove(2)).to.throw('index is out of bound');
+        });
     });
 });
