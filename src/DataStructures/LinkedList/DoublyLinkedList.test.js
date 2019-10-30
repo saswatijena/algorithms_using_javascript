@@ -322,5 +322,69 @@ describe('Doubly Linked List', () => {
 
             expect(() => list.set(4, 40)).to.throw('index is out of bound')
         })
-    })
+    });
+    describe('Insert', () => {
+        it('should insert at the begining if the index is 0', () => {
+            let list = new DoublyLinkedList();
+            list.insert(0, 10);
+
+            expect(list.head.value).to.equal(10);
+            expect(list.tail.value).to.equal(10);
+
+        });
+        it('should increment length when index is 0', () => {
+            let list = new DoublyLinkedList();
+            list.insert(0, 10);
+
+            expect(list.length).to.equal(1);
+        });
+        it('should insert at the end if the index is equal to length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.insert(3, 40);
+
+            expect(list.head.value).to.equal(10);
+            expect(list.tail.value).to.equal(40);
+            expect(list.tail.previous.value).to.equal(30);
+            expect(list.tail.previous.next.value).to.equal(40);
+        });
+        it('should increment length when the index is equal to length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.insert(3, 40);
+
+            expect(list.length).to.equal(4);
+        });
+        it('should insert when the index if anywhere in between 0 and length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.insert(1, 40);
+
+            expect(list.head.value).to.equal(10);
+            expect(list.tail.value).to.equal(30);
+            let node = list.get(1);
+            expect(node.value).to.equal(40);
+            expect(node.next.value).to.equal(20);
+            expect(node.previous.value).to.equal(10);
+        });
+        it('should increment length when the index is anywhere between 0 and length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30);
+
+            list.insert(1, 40);
+
+            expect(list.length).to.equal(4);
+        });
+    });
 });

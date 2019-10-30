@@ -102,6 +102,34 @@ class DoublyLinkedList {
         let node = this.get(index);
         node.value = value;
     }
+    /** Inserts value at the passed in index */
+    insert(index, value) {
+        if (index < 0 || index > this.length) throw new Error('index is out of bound');
+
+        if (index === 0) {
+            return this.unshift(value);
+        }
+        if (index === this.length) {
+            return this.push(value);
+        }
+
+        let newNode = new Node(value);
+        let previousNode = this.get(index - 1);
+        let nextNode = previousNode.next;
+
+        previousNode.next = newNode;
+        newNode.previous = previousNode;
+        newNode.next = nextNode;
+        nextNode.previous = newNode;
+
+        this.length++;
+
+        return this;
+    }
+    /** Removes node from the passed in index */
+    remove(index) {
+
+    }
 }
 
 module.exports = DoublyLinkedList;
