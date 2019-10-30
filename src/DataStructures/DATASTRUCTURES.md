@@ -19,3 +19,11 @@ Data structures are collections of values and relationships among them or action
 - Contains head, tail and length property 
 - Consists of nodes, where each node has a value and points to next as well as previous node. 
 - takes up more memory is one of the drawbacks which is almost always a tradeoff :) 
+
+  - Inserting :**O(1)** 
+  - Removal : **O(1)** 
+  - Searching : **O(n)** still faster than singly linked list as its n/2
+  - Access : **O(n)** still faster than singly linked list as its n/2
+
+- takes more space than singly linked list
+- but finds nodes in half the time
