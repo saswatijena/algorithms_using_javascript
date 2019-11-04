@@ -144,6 +144,22 @@ class DoublyLinkedList {
         this.length--;
         return currentNode;
     }
+    reverse() {
+        const mid = Math.floor(this.length / 2);
+        let counter = 0;
+        let start = this.head;
+        let end = this.tail;
+        while (counter < mid) {
+            let temp = start.value;
+            start.value = end.value;
+            end.value = temp;
+
+            start = start.next;
+            end = end.previous;
+            counter++;
+        }
+        return this;
+    }
 }
 
 module.exports = DoublyLinkedList;

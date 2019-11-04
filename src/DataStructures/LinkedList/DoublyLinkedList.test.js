@@ -492,4 +492,48 @@ describe('Doubly Linked List', () => {
             expect(() => list.remove(2)).to.throw('index is out of bound');
         });
     });
+    describe('Reverse', () => {
+        it('should reverse a blank list', () => {
+            let list = new DoublyLinkedList();
+            let reversedList = list.reverse();
+
+            expect(reversedList.head).to.be.null;
+            expect(reversedList.tail).to.be.null;
+            expect(reversedList.length).to.equal(0);
+        });
+        it('should reverse a list with single value', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            let reversedList = list.reverse();
+
+            expect(reversedList.head.value).to.equal(10);
+            expect(reversedList.tail.value).to.equal(10);
+            expect(reversedList.head.previous).to.be.null;
+            expect(reversedList.tail.previous).to.be.null;
+            expect(reversedList.head.next).to.be.null;
+            expect(reversedList.tail.next).to.be.null;
+            expect(reversedList.length).to.equal(1);
+        });
+        it('should reverse a list with even length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            let reversedList = list.reverse();
+            expect(list.head.value).to.equal(20);
+            expect(list.tail.value).to.equal(10);
+            expect(list.length).to.equal(2)
+        });
+        it('should reverse a list with odd length', () => {
+            let list = new DoublyLinkedList();
+            list.push(10);
+            list.push(20);
+            list.push(30)
+            let reversedList = list.reverse();
+            expect(list.head.value).to.equal(30);
+            expect(list.tail.value).to.equal(10);
+            expect(list.head.next.value).to.equal(20);
+            expect(list.tail.previous.value).to.equal(20);
+            expect(list.length).to.equal(3)
+        });
+    })
 });
