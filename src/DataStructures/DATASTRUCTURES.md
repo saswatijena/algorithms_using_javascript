@@ -30,9 +30,28 @@ Data structures are collections of values and relationships among them or action
 
 ### Stacks 
 - abides by LIFO principle 
+- eg undo changes in doc
 - We can use an array and use push and pop. We can also use shift and unshift, but that is a little inefficient, since it invloves shifting all the items if a new item is to be added or removed
 - We can also use a linked list to implement the same.
-
 - It should have two methods push and pop. Push pushes a new item to the stack and Pop pops item from the end of the stack.
 - Push and pop should be constant time. So if we are using singly linked list instead of using push and pop(0(n)), using shift and unsift will ensure that its contant time.
 - In case of doubly linked list you can use push/pop and shift/unshift as both are constant time
+
+  - Inserting :**O(1)** 
+  - Removal : **O(1)** 
+  - Searching : **O(n)**
+  - Access : **O(n)**
+
+  ### Queues
+  - abides by FIFO principle 
+  - eg. background tasks, uploading resources, printing
+  - We can use both arrays and linked list
+  - has two functions enqueue to add the to the queue and dequeue to remove from the queue
+  - If we use arrays then we use either the combination of push/shift and unshift/pop, either of which will result in reindexing. So it is best to implement queues using linked list instead of arrays
+  - Since in singly linked list adding at the end is O(n), removing at the begining O(1) and adding at the end O(1) is the best option.
+
+  - Inserting :**O(1)** 
+  - Removal : **O(1)** 
+  - Searching : **O(n)**
+  - Access : **O(n)**
+
