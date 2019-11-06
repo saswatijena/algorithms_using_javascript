@@ -42,16 +42,27 @@ Data structures are collections of values and relationships among them or action
   - Searching : **O(n)**
   - Access : **O(n)**
 
-  ### Queues
-  - abides by FIFO principle 
-  - eg. background tasks, uploading resources, printing
-  - We can use both arrays and linked list
-  - has two functions enqueue to add the to the queue and dequeue to remove from the queue
-  - If we use arrays then we use either the combination of push/shift and unshift/pop, either of which will result in reindexing. So it is best to implement queues using linked list instead of arrays
-  - Since in singly linked list adding at the end is O(n), removing at the begining O(1) and adding at the end O(1) is the best option.
+### Queues
+- abides by FIFO principle 
+- eg. background tasks, uploading resources, printing
+- We can use both arrays and linked list
+- has two functions enqueue to add the to the queue and dequeue to remove from the queue
+- If we use arrays then we use either the combination of push/shift and unshift/pop, either of which will result in reindexing. So it is best to implement queues using linked list instead of arrays
+- Since in singly linked list adding at the end is O(n), removing at the begining O(1) and adding at the end O(1) is the best option.
 
-  - Inserting :**O(1)** 
-  - Removal : **O(1)** 
-  - Searching : **O(n)**
-  - Access : **O(n)**
+- Inserting :**O(1)** 
+- Removal : **O(1)** 
+- Searching : **O(n)**
+- Access : **O(n)**
+
+### Tree
+- A child can have only one parent
+- A parent can have more than one child
+- In case of binary tree a parent can have a maximum of 2 childs 
+- In case of binary search tree left child is smaller than the parent and right tree is greater than the parent
+- eg HTML DOM, JSON structure, Network Routing, Abstract syntax tree, Folders in OS, Artifitial intelligence to determine possible outcomes of a game and take the best step
+
+
+
+
 
