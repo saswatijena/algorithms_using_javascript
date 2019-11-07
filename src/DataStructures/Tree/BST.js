@@ -40,6 +40,20 @@ class BinarySearchTree {
         }
 
         return this;
+        // TODO: write unit test cases for this
+    }
+
+    find(value) {
+        let current = this.root;
+        while (current) {
+            if (current.value === value) return current;
+            else if (value > current.value) {
+                current = current.right;
+            } else if (value < current.value) {
+                current = current.left;
+            }
+        }
+        return undefined;
     }
 
 }
