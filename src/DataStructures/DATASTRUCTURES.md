@@ -73,6 +73,12 @@ Data structures are collections of values and relationships among them or action
 
 ## Depth first search (DFS)
 - Traverses node vertically
+- has pre order, post order and in order ways of traversal
+
+
+## BFS vs DFS
+- Time complexity does not matter in this case as we are touching each node
+- In terms of space complexity if we have a wide tree BFS stores a lot of nodes in memory and takes a lot of space in comparision to DFS.But if the tree is deeper than it is wider DFS would end up taking more memory than BFS.
 
 
 

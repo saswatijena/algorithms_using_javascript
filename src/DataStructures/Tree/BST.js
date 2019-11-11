@@ -76,12 +76,12 @@ class BinarySearchTree {
         }
         return data;
     }
+
     dfsPreOrder() {
         let data = [];
         preOrderTraverse(this.root, data);
         return data;
     }
-
     preOrderTraverse(node, data) {
         data.push(node.value);
         if (node.left) this.preOrderTraverse(node.left, data);
@@ -92,7 +92,6 @@ class BinarySearchTree {
         postOrderTraverse(this.root, data);
         return data;
     }
-
     postOrderTraverse(node, data) {
         if (node.left) this.postOrderTraverse(node.left, data);
         if (node.right) this.postOrderTraverse(node.right, data);
@@ -103,7 +102,6 @@ class BinarySearchTree {
         inOrderTraverse(this.root, data);
         return data;
     }
-
     inOrderTraverse(node, data) {
         if (node.left) this.inOrderTraverse(node.left, data);
         data.push(node.value);
