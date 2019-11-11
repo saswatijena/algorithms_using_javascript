@@ -62,7 +62,17 @@ Data structures are collections of values and relationships among them or action
 - In case of binary search tree left child is smaller than the parent and right tree is greater than the parent
 - eg HTML DOM, JSON structure, Network Routing, Abstract syntax tree, Folders in OS, Artifitial intelligence to determine possible outcomes of a game and take the best step
 
+- Inserting :**O(log n)** 
+- Removal : 
+- Searching : **O(log n)**
+- Access : **O(log n)**
 
+## Breadth first search (BFS)
+- Traverses one layer at a time, horizontally
+- Use queue to keep track of all the items from the same layer
+
+## Depth first search (DFS)
+- Traverses node vertically
 
 
 
