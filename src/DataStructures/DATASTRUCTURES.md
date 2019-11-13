@@ -80,5 +80,10 @@ Data structures are collections of values and relationships among them or action
 - Time complexity does not matter in this case as we are touching each node
 - In terms of space complexity if we have a wide tree BFS stores a lot of nodes in memory and takes a lot of space in comparision to DFS.But if the tree is deeper than it is wider DFS would end up taking more memory than BFS.
 
+### Heaps
+- Heaps are essentially trees which are inverted and has different rules
+- Max Binary heap - parent node is larger than its children. Root is the maximum in the heap
+- Min Binary heap - parent node is smaller than its children. Root is the miminum in the heap
+
 
 
