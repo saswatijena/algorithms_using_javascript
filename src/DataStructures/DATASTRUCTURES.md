@@ -84,6 +84,8 @@ Data structures are collections of values and relationships among them or action
 - Heaps are essentially trees which are inverted and has different rules
 - Max Binary heap - parent node is larger than its children. Root is the maximum in the heap
 - Min Binary heap - parent node is smaller than its children. Root is the miminum in the heap
-
+- Very compact
+- Used to implement priority queue, used in graph traversal algorithms
+- Heap can be represented using an array instead of nodes where child is at 2n + 1 parent is math.floor((n-1)/2)
 
 
