@@ -20,26 +20,28 @@ class MaxBinaryHeap {
         // and swaping with the child with the largest value
         if (this.values.length <= 0) return undefined;
         let removed = this.values[0];
+        if (this.values.length === 1) return removed;
         this.values = [this.values[this.values.length - 1], ...this.values.slice(0, this.values.length - 1)];
 
-        const currentValue = this.values[0];
+        const element = this.values[0];
         let currentIndex = 0;
+        const length = this.values.length;
 
-        while (true) {
+        while (currentIndex < length) {
             const leftChildIdx = 2 * currentIndex + 1;
-            const leftChild = this.values[leftChildIdx]
+            const leftChild = leftChildIdx < length ? this.values[leftChildIdx] : null;
             const rightChildIdx = leftChildIdx + 1;
-            const rightChild = this.values[rightChildIdx];
+            const rightChild = rightChildIdx < length ? this.values[rightChildIdx] : null;
 
             let largestChildIdx = leftChild > rightChild ? leftChildIdx : rightChildIdx;
             let largestValue = leftChild > rightChild ? leftChild : rightChild;
 
-            if (currentValue > largestValue) break;
+            if (element > largestValue) break;
 
 
-            this.values[largestChildIdx] = currentValue;
+            this.values[largestChildIdx] = element;
             this.values[currentIndex] = largestValue;
-            currentIndex = largestChildIdx
+            currentIndex = largestChildIdx;
         }
 
         return removed;
