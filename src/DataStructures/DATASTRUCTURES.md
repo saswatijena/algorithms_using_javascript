@@ -62,7 +62,7 @@ Data structures are collections of values and relationships among them or action
 - In case of binary search tree left child is smaller than the parent and right tree is greater than the parent
 - eg HTML DOM, JSON structure, Network Routing, Abstract syntax tree, Folders in OS, Artifitial intelligence to determine possible outcomes of a game and take the best step
 
-- Inserting :**O(log n)** 
+- Inserting :**O(log n)** worst case scenario when the tree looks like a linked list will not be log(n)
 - Removal : 
 - Searching : **O(log n)**
 - Access : **O(log n)**
@@ -87,5 +87,16 @@ Data structures are collections of values and relationships among them or action
 - Very compact
 - Used to implement **priority queue**, used in graph traversal algorithms
 - Heap can be represented using an array instead of nodes where child is at 2n + 1 parent is math.floor((n-1)/2)
+
+- Inserting : **O(log n)**  does not have a possibility of a linked list like looking tree so worst case is also log(n)
+- Removal : **O(log n)** 
+- Searching : **O(n)**
+
+### Hash Tables 
+- key value pair
+- implementing hash tables require us to convert keys into valid array indices, the functions that perform that are called hash functions.
+- separate chaining and linear probing are two ways to handle collisions
+- separate chaining is maintaining a nested array when a collision happens
+- linear probing is maintaining one array, when there is a collision we look for next empty slot in an array
 
 
