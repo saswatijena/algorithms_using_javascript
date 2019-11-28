@@ -99,4 +99,11 @@ Data structures are collections of values and relationships among them or action
 - separate chaining is maintaining a nested array when a collision happens
 - linear probing is maintaining one array, when there is a collision we look for next empty slot in an array
 
+### Graphs
+- Collection of nodes and connections between them which can either be directed or undirected
+- eg social networking sites, maps, recommendations engine
+- **vertex** is a node and **edge** is a connection between nodes 
+- weighted graph is one where edges have values 
+
+
 
