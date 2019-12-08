@@ -104,6 +104,7 @@ Data structures are collections of values and relationships among them or action
 - eg social networking sites, maps, recommendations engine
 - **vertex** is a node and **edge** is a connection between nodes 
 - weighted graph is one where edges have values 
-
+- We can use adjacency matrix to store edges between two nodes 
+- We can also use adjacency list where each index contains a list of nodes which it has connections to. However this is most useful if nodes are numeric or has huge gaps. In that case we use a hash to store the list of nodes that it has connections to.  
 
 
